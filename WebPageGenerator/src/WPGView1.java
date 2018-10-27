@@ -1,9 +1,11 @@
 import java.awt.Cursor;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
@@ -50,11 +52,7 @@ public final class WPGView1 extends JFrame implements WPGView {
     /**
      * Useful constants.
      */
-    private static final int TEXT_AREA_HEIGHT = 5, TEXT_AREA_WIDTH = 20,
-            DIGIT_BUTTONS = 10, MAIN_BUTTON_PANEL_GRID_ROWS = 4,
-            MAIN_BUTTON_PANEL_GRID_COLUMNS = 2, SIDE_BUTTON_PANEL_GRID_ROWS = 3,
-            SIDE_BUTTON_PANEL_GRID_COLUMNS = 1, CALC_GRID_ROWS = 3,
-            CALC_GRID_COLUMNS = 1;
+    private static final int TEXT_AREA_HEIGHT = 10, TEXT_AREA_WIDTH = 20;
 
     /**
      * Default constructor.
@@ -126,20 +124,37 @@ public final class WPGView1 extends JFrame implements WPGView {
         JScrollPane inputTextScrollPaneSubPagesText = new JScrollPane(
                 this.subPagesText);
 
+        JPanel heading = new JPanel(new FlowLayout());
+        heading.setToolTipText("Heading");
+
+        JPanel headingTextPanel = new JPanel(new FlowLayout());
+        headingTextPanel.add(inputTextScrollPaneName);
+        headingTextPanel.add(inputTextScrollPaneOrganization);
+
+        JPanel subPages = new JPanel(new FlowLayout());
+        subPages.setToolTipText("SubPages");
+
+        JPanel subPagesTextPanel = new JPanel(new FlowLayout());
+        subPagesTextPanel.add(inputTextScrollPaneSubPagesName);
+        subPagesTextPanel.add(inputTextScrollPaneSubPagesText);
+
+        JPanel buttonPanel = new JPanel(new FlowLayout());
+        buttonPanel.add(this.bConfirm);
+        buttonPanel.add(this.bPublish);
+
         /*
          * Organize main window
          */
-        this.setLayout(new GridLayout(3, 2));
+        this.setLayout(new GridLayout(5, 1));
         /*
          * Add scroll panes and button panel to main window, from left to right
          * and top to bottom
          */
-        this.add(inputTextScrollPaneName);
-        this.add(inputTextScrollPaneOrganization);
-        this.add(inputTextScrollPaneSubPagesName);
-        this.add(inputTextScrollPaneSubPagesText);
-        this.add(this.bConfirm);
-        this.add(this.bPublish);
+        this.add(heading);
+        this.add(headingTextPanel);
+        this.add(subPages);
+        this.add(subPagesTextPanel);
+        this.add(buttonPanel);
 
         // Set up the observers ----------------------------------------------
 
