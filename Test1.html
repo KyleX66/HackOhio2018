@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zongming Tian</title>
+    <style>
+        #header {
+            background-color:yellow;
+            color:green;
+            text-align:center;
+            padding:5px;
+        }
+        #sidebar {
+            line-height:80px;
+            background-color:#eeeeee;
+            height:1300px;
+            width:170px;
+            float:left;
+            padding:5px;
+            font-family: "sans serif";
+        }
+        #maincol {
+            width:800px;
+            float:left;
+            padding:10px;
+        }
+        #footer {
+            background-color:yellow;
+            color:purple;
+            clear:both;
+            text-align:center;
+            padding:5px;
+        }
+
+    </style>
+    <script>
+        function myFunction()
+        {
+            document.getElementById("greetings1").innerHTML="Thanks for visiting";
+        }
+        function clickme() {
+            var obj = document.getElementById("bio");
+            var x = obj.offsetLeft
+            var y = obj.offsetTop;
+            x += 10;
+            y += 10;
+            obj.style.left = x;
+            obj.style.top = y;
+
+        }
+        function show()
+        {
+            setInterval("clickme()",500);
+        }
+        function disp_alert()
+        {   alert("This site is currently under maintenance!")
+            document.querySelector("#out").addEventListener("click", function(event){
+            event.preventDefault();},false);
+            document.querySelector("#out1").addEventListener("click", function(event){event.preventDefault();},false);
+
+            return;
+        }
+    </script>
+
+
+
+</head>
+<body>
+    <div id = "header">
+        <h1 class = "title">Zongming Tian</h1>
+        <h2 class = "title">
+            Computer Science & Engineering - The Ohio State University
+        </h2>
+    </div>
+    <div id = "sidebar">
+        <ul class="sidebar">
+            <li class="sidebar">Home</li>
+            <li class="sidebar" id = "out"><a href="http://web.cse.ohio-state.edu/~morris.343/Publications/" onclick=disp_alert()>Publications</a></li>
+            <li class="sidebar" id = "out1"><a href="http://web.cse.ohio-state.edu/~morris.343/Presentations/" onclick=disp_alert()>Presentations</a></li>
+            <li class="sidebar"><a href="http://www.cse.ohio-state.edu/" >CSE Home</a></li>
+            <!--<li class="sidebar"><a href="./Research">Research</a></li>-->
+        </ul>
+    </div>
+    <div id="maincol">
+     <!--   <div id = bio style="position:absolute;">
+            <img name = "bio" src = "./img1.png" width="75" height="100" />
+            I am handsome
+        </div>
+        <button type="button" onclick=disp_alert()">View my greetings</button>
+        <p id = "greetings1"> Hello </p>-->
+       <!-- <script type="text/javascript">
+            function Divflying(){
+                var div=document.getElementById('bio1');
+                if (!div) {
+                    return;
+                }
+                var intX=window.event.clientX;
+                var intY=window.event.clientY;
+                div.style.left=intX+"px";
+                div.style.top=intY+"px";
+            }
+            document.onmousemove=Divflying;
+        </script>-->
+        <img name = "bio" src = "./img1.png" width="300" height="350" align="right"/>
+        <p class = "bio">
+            I am a graduate of the Department of Computer Science  and
+            Engineering at the Ohio State University. My interests lie
+            in the area of Artificial Intelligence, particularly as it applies to
+            Automatic Speech Recognition (ASR) and Natural Language Processing
+            (NLP). My PhD dissertation work was on discriminative models for ASR in
+            the OSU <a href="http://slate.cse.ohio-state.edu/">SLATE lab</a>
+        </p>
+    </div>
+    <div id = footer>
+        <div class = "footer" id="localtime"></div>
+        <script type="text/javascript">
+            function showLocale(objD)
+            {
+                var str,colorhead,colorfoot;
+                var yy = objD.getYear();
+                if(yy<1900) yy = yy+1900;
+                var MM = objD.getMonth()+1;
+                if(MM<10) MM = '0' + MM;
+                var dd = objD.getDate();
+                if(dd<10) dd = '0' + dd;
+                var hh = objD.getHours();
+                if(hh<10) hh = '0' + hh;
+                var mm = objD.getMinutes();
+                if(mm<10) mm = '0' + mm;
+                var ss = objD.getSeconds();
+                if(ss<10) ss = '0' + ss;
+                colorhead = "<span>"
+                colorfoot="</span>"
+                str = colorhead + yy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss + " " + colorfoot;
+                return(str);
+            }
+            function tick()
+            {
+                var today;
+                today = new Date();
+                document.getElementById("localtime").innerHTML = showLocale(today);
+                window.setTimeout("tick()", 1000);
+            }
+            tick();
+        </script>
+        Copyright Zongming Tian
+    </div>
+
+</body>
+</html>
