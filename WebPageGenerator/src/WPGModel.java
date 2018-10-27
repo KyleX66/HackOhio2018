@@ -39,4 +39,5 @@ public interface WPGModel {
     //String subPagesTitle();
 
     //String subPagesText();
+    123
 }
