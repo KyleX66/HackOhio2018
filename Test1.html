@@ -5,11 +5,11 @@
     <title>Zongming Tian</title>
     <style>
         #header {
-            background-color:yellow;
-            color:green;
-            text-align:center;
-            padding:5px;
+            padding: 1ex 0ex 1ex 3ex;
+            background: #3B6EBF;
+            color: #ffffff;
         }
+
         #sidebar {
             line-height:80px;
             background-color:#eeeeee;
@@ -19,11 +19,7 @@
             padding:5px;
             font-family: "sans serif";
         }
-        #maincol {
-            width:800px;
-            float:left;
-            padding:10px;
-        }
+
         #footer {
             background-color:yellow;
             color:purple;
@@ -31,9 +27,25 @@
             text-align:center;
             padding:5px;
         }
+        #maincol {
+            float: right;
+            width: 75%;
+            padding: 30px 7% 10px 3%;
+            border-left: dotted 1px #000099;
+        }
+        img.bio {
+            float: right;
+            margin: 2ex;
+        }
+
+
 
     </style>
     <script>
+        function myFunction1(){
+                return "Are you sure?"
+            }
+
         function myFunction()
         {
             document.getElementById("greetings1").innerHTML="Thanks for visiting";
@@ -65,7 +77,7 @@
 
 
 </head>
-<body>
+<body onbeforeunload="return myFunction1()">
     <div id = "header">
         <h1 class = "title">Zongming Tian</h1>
         <h2 class = "title">
@@ -101,7 +113,7 @@
             }
             document.onmousemove=Divflying;
         </script>-->
-        <img name = "bio" src = "./img1.png" width="300" height="350" align="right"/>
+        <img class = "bio" src = "./img1.png" width="300" height="350" align="right"/>
         <p class = "bio">
             I am a graduate of the Department of Computer Science  and
             Engineering at the Ohio State University. My interests lie
@@ -148,7 +160,3 @@
 
 </body>
 </html>
-
-        public static void webPageGenerator(String name, String organizaiton, Sequence<Pair<String, String>> subPages) {
-            
-        }
