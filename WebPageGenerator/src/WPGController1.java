@@ -34,9 +34,12 @@ public final class WPGController1 implements WPGController {
     public void processPublishEvent() {
 
 =======
+
     void processAddSubPage() {
         Map<String, String> subPages = this.model.subPages();
 >>>>>>> branch 'master' of https://github.com/KyleX66/Pack-Up-Artists.git
     }
+
+//asdasd
 
 }
