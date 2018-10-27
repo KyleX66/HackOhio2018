@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>input your name here</title>
+<style>
+#header {
+ padding: 1ex 0ex 1ex 3ex;
+  background: #3B6EBF;
+ color: #ffffff;
+ }
+#sidebar {
+ line-height:80px;
+ background-color:#eeeeee;
+ height:1300px;
+ width:170px;
+ float:left;
+ padding:5px;
+ font-family: "sans serif";
+ }
+#footer {
+  background-color:yellow;
+ color:purple;
+ clear:both;
+ text-align:center;
+ padding:5px;
+ }
+#maincol {
+  float: right;
+ width: 75%;
+ padding: 30px 7% 10px 3%;
+ border-left: dotted 1px #000099;
+ }
+ img.bio {
+  float: right;
+  margin: 2ex;/n }
+</style>
+<script>
+function myFunction(){
+  document.getElementById("greetings1").innerHTML="Thanks for visiting";
+}
+function clickme() {
+    var obj = document.getElementById("bio");
+  var x = obj.offsetLeft;
+ var y = obj.offsetTop;
+ x += 10;
+ y += 10;
+ obj.style.left = x;
+ obj.style.top = y;
+ }
+function show(){
+   setInterval("clickme()",500);
+  }
+function disp_alert()
+   {   alert("This site is currently under maintenance!")
+     document.querySelector("#out").addEventListener("click", function(event){
+   event.preventDefault();},false);
+   document.querySelector("#out1").addEventListener("click", function(event){event.preventDefault();},false);
+ return;
+}
+</script>
+</head>
+<body onbeforeunload="return myFunction1()">
+<div id = "header">
+ <h1 class = "title">input your name here</h1>
+<h2 class = "title">
+input your organization
+</h2>
