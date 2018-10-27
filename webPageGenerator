@@ -24,4 +24,10 @@ public static void webPageGenerator(String name, String organizaiton, Sequence<P
             output.println("<h2 class = ""title"">");
             output.println(organization);
             output.println("</h2>");
+            output.println("</div>");
+            output.println("<div id = \"sidebar\">");
+            output.println( "<ul class=\"sidebar\">");
+            Pair<String,String> main = subPages.entry(0);
+            String namemain = main.key();
+            
         }
