@@ -1,7 +1,3 @@
-import components.map.Map;
-import components.naturalnumber.NaturalNumber;
-import components.naturalnumber.NaturalNumber2;
-
 /**
  * Controller class.
  *
@@ -19,15 +15,23 @@ public final class WPGController1 implements WPGController {
      */
     private final WPGView view;
 
-    /**
-     * Useful constants.
-     */
-    private static final NaturalNumber TWO = new NaturalNumber2(2),
-            INT_LIMIT = new NaturalNumber2(Integer.MAX_VALUE);
+    public WPGController1(WPGModel model, WPGView view) {
+        this.model = model;
+        this.view = view;
+        /*
+         * Update view to reflect initial value of model
+         */
+    }
 
     @Override
-    void processAddSubPage() {
-        Map<String, String> subPages = this.model.subPages();
+    public void processConfirmEvent() {
+        this.model.setName(this.model.name());
+        this.model.setOrganization(this.model.organization());
+    }
+
+    @Override
+    public void processPublishEvent() {
+
     }
 
 }
