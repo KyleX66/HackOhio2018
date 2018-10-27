@@ -27,9 +27,8 @@ public final class WPGController1 implements WPGController {
 
     @Override
     void processAddSubPage() {
-        sssss
         Map<String, String> subPages = this.model.subPages();
-        sss123
+        da jia ba
     }
 
 }

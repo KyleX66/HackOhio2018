@@ -188,10 +188,11 @@ public final class WPGView1 extends JFrame implements WPGView {
          */
         Object source = event.getSource();
         if (source == this.bName) {
-            this.controller.processClearEvent();
-            this.currentState = State.SAW_CLEAR;
-        } else if (source == this.bSwap) {
-            this.controller.processSwapEvent();
+            this.controller.processNameEvent();
+            this.currentState = State.SAW_NAME;
+        } else if (source == this.bOrganization) {
+            this.controller.processOrganizationEvent();
+        }
             this.currentState = State.SAW_OTHER_OP;
         } else if (source == this.bEnter) {
             this.controller.processEnterEvent();
@@ -216,9 +217,8 @@ public final class WPGView1 extends JFrame implements WPGView {
             this.currentState = State.SAW_OTHER_OP;
         }
         }
-    /*
-     * Set the cursor back to normal (because we changed it at the beginning of
-     * the method body)
-     */
-    this.setCursor(Cursor.getDefaultCursor());
-}}
+/*
+ * Set the cursor back to normal (because we changed it at the beginning of the
+ * method body)
+ */
+this.setCursor(Cursor.getDefaultCursor());}}
