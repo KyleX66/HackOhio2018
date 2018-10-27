@@ -34,11 +34,15 @@ public static void webPageGenerator(String name, String organizaiton, Sequence<P
             for(int i = 1;i < subPages.length();i++){
                  Pair<String,String> pair = subPages.entry(i);
                  String k = i.toString();
-                 output.println("<li class=\"sidebar\" id = \"out"+ k +"\"><a href=\""+ pair.key() +".html\" onclick=disp_alert()>" + pair.key() + "</a></li>");
+                 output.println("<li class=\"sidebar\" id = \"out" + k +"\"><a href=\""+ pair.key() +".html\" onclick=disp_alert()>" + pair.key() + "</a></li>");
                  subPagesGenerator(pair);
             }
             output.println("</ul>");
             output.println("</div>");
             output.println("<div id=\"maincol\">");
-            
+            output.println("<p class = \"bio\">");
+            output.println(getmain);
+            output.println("</p>");
+            output.println("</div>");
+            output.println("</body>\n</html>");
         }
