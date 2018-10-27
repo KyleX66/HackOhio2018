@@ -17,8 +17,8 @@
  */
 public interface WPGController {
 
-    void processConfirmInput();
+    void processConfirmEvent();
 
-    void processPublish();
+    void processPublishEvent();
 
 }
