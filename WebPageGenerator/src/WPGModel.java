@@ -1,4 +1,5 @@
-import components.naturalnumber.NaturalNumber;
+import components.map.Map.Pair;
+import components.sequence.Sequence;
 
 /**
  * Model interface.
@@ -23,7 +24,19 @@ public interface WPGModel {
 
     /* Title */
     String name();
-    String
 
+    void setName(String name);
 
+    String organization();
+
+    void setOrganization(String organization);
+
+    /* Sub */
+    Sequence<Pair<String, String>> subPages();
+
+    void addSubPages(Pair<String, String> subPairs);
+
+    //String subPagesTitle();
+
+    //String subPagesText();
 }
