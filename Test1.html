@@ -33,11 +33,16 @@
             padding: 30px 7% 10px 3%;
             border-left: dotted 1px #000099;
         }
+        #container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
         img.bio {
             float: right;
             margin: 2ex;
         }
-
 
 
     </style>
@@ -94,12 +99,23 @@
         </ul>
     </div>
     <div id="maincol">
-     <!--   <div id = bio style="position:absolute;">
-            <img name = "bio" src = "./img1.png" width="75" height="100" />
-            I am handsome
-        </div>
-        <button type="button" onclick=disp_alert()">View my greetings</button>
-        <p id = "greetings1"> Hello </p>-->
+
+        <p style="float:left">
+            <img src="g.jpg"　border="0" ALT="Google" height="30px">
+        </p>
+        <p>
+        <form action="http://www.google.com/search" method="get">
+            <input type="text" name="q" size="17" maxlength="255" value="" />
+            <input type="submit" name="btnG" value="Google" />
+        </form>
+        </p>
+
+        <!--   <div id = bio style="position:absolute;">
+               <img name = "bio" src = "./img1.png" width="75" height="100" />
+               I am handsome
+           </div>
+           <button type="button" onclick=disp_alert()">View my greetings</button>
+           <p id = "greetings1"> Hello </p>-->
        <!-- <script type="text/javascript">
             function Divflying(){
                 var div=document.getElementById('bio1');
@@ -113,6 +129,7 @@
             }
             document.onmousemove=Divflying;
         </script>-->
+
         <img class = "bio" src = "./img1.png" width="300" height="350" align="right"/>
         <p class = "bio">
             I am a graduate of the Department of Computer Science  and
@@ -122,6 +139,7 @@
             (NLP). My PhD dissertation work was on discriminative models for ASR in
             the OSU <a href="http://slate.cse.ohio-state.edu/">SLATE lab</a>
         </p>
+
     </div>
     <div id = footer>
         <div class = "footer" id="localtime"></div>
