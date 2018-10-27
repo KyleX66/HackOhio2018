@@ -17,8 +17,12 @@
  */
 public interface WPGController {
 
-    void processAddSubPage();
+    void processNameEvent();
 
-    void processPublish();
+    void processOrganizationEvent();
+
+    void processSubPagesNameEvent();
+
+    void processSubPagesTextEvent();
 
 }
