@@ -24,6 +24,7 @@ public final class WPGController1 implements WPGController {
     }
 
     @Override
+<<<<<<< HEAD
     public void processConfirmEvent() {
         this.model.setName(this.model.name());
         this.model.setOrganization(this.model.organization());
@@ -32,6 +33,10 @@ public final class WPGController1 implements WPGController {
     @Override
     public void processPublishEvent() {
 
+=======
+    void processAddSubPage() {
+        Map<String, String> subPages = this.model.subPages();
+>>>>>>> branch 'master' of https://github.com/KyleX66/Pack-Up-Artists.git
     }
 
 }
