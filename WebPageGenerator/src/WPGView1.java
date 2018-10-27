@@ -193,32 +193,11 @@ public final class WPGView1 extends JFrame implements WPGView {
         } else if (source == this.bOrganization) {
             this.controller.processOrganizationEvent();
         }
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bEnter) {
-            this.controller.processEnterEvent();
-            this.currentState = State.SAW_ENTER;
-        } else if (source == this.bAdd) {
-            this.controller.processAddEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bSubtract) {
-            this.controller.processSubtractEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bMultiply) {
-            this.controller.processMultiplyEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bDivide) {
-            this.controller.processDivideEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bPower) {
-            this.controller.processPowerEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bRoot) {
-            this.controller.processRootEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        }
-        }
-/*
- * Set the cursor back to normal (because we changed it at the beginning of the
- * method body)
- */
-this.setCursor(Cursor.getDefaultCursor());}}
+
+        /*
+         * Set the cursor back to normal (because we changed it at the beginning
+         * of the method body)
+         */
+        this.setCursor(Cursor.getDefaultCursor());
+    }
+}

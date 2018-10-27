@@ -17,12 +17,8 @@
  */
 public interface WPGController {
 
-    void processNameEvent();
+    void processConfirmInput();
 
-    void processOrganizationEvent();
-
-    void processSubPagesNameEvent();
-
-    void processSubPagesTextEvent();
+    void processPublish();
 
 }

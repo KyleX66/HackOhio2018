@@ -19,16 +19,19 @@ public final class WPGController1 implements WPGController {
      */
     private final WPGView view;
 
-    /**
-     * Useful constants.
-     */
-    private static final NaturalNumber TWO = new NaturalNumber2(2),
-            INT_LIMIT = new NaturalNumber2(Integer.MAX_VALUE);
+    
+
 
     @Override
-    void processAddSubPage() {
+    public void processConfirmInput() {
+        this.model.
+    }
+    
+
+    @Override
+    public void processPublish() {
+        public void headerGenerator()
         Map<String, String> subPages = this.model.subPages();
-        da jia ba
     }
 
 }
