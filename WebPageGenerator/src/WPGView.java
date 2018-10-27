@@ -16,12 +16,4 @@ public interface WPGView extends ActionListener {
      */
     void registerObserver(WPGController controller);
 
-    void processNameEvent();
-
-    void processOrganizationEvent();
-
-    void processSubPagesNameEvent();
-
-    void processSubPagesTextEvent();
-
 }

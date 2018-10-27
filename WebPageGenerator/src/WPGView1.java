@@ -28,7 +28,7 @@ public final class WPGView1 extends JFrame implements WPGView {
         /**
          * Last event was clear, enter, another operator, or digit entry, resp.
          */
-        SAW_NAME, SAW_ORGANIZATION, SAW_SUBPAGESNAME, SAW_SUBPAGESTEXT;
+        SAW_CONFIRM, SAW_PUBLISH;
     }
 
     /**
@@ -45,8 +45,7 @@ public final class WPGView1 extends JFrame implements WPGView {
     /**
      * Operator and related buttons.
      */
-    private final JButton bName, bOrganization, bSubPagesName, bSubPagesText,
-            bPublish;
+    private final JButton bConfirm, bPublish;
 
     /**
      * Useful constants.
@@ -76,7 +75,7 @@ public final class WPGView1 extends JFrame implements WPGView {
          * currentState is not a GUI widget per se, but is needed to process
          * digit button events appropriately
          */
-        this.currentState = State.SAW_NAME;
+        this.currentState = State.SAW_CONFIRM;
         /*
          * Create widgets
          */
@@ -89,10 +88,7 @@ public final class WPGView1 extends JFrame implements WPGView {
         this.subPagesText = new JTextArea("input your subPagesText",
                 TEXT_AREA_HEIGHT, TEXT_AREA_WIDTH);
 
-        this.bName = new JButton("Confirm Name");
-        this.bOrganization = new JButton("Confirm Organization");
-        this.bSubPagesName = new JButton("Confirm SubPagesName");
-        this.bSubPagesText = new JButton("Confrim SubPagesText");
+        this.bConfirm = new JButton("Confirm");
         this.bPublish = new JButton("PUBLISH!");
 
         // Set up the GUI widgets --------------------------------------------
@@ -133,19 +129,16 @@ public final class WPGView1 extends JFrame implements WPGView {
         /*
          * Organize main window
          */
-        this.setLayout(new GridLayout(5, 2));
+        this.setLayout(new GridLayout(6, 1));
         /*
          * Add scroll panes and button panel to main window, from left to right
          * and top to bottom
          */
         this.add(inputTextScrollPaneName);
-        this.add(this.bName);
         this.add(inputTextScrollPaneOrganization);
-        this.add(this.bOrganization);
         this.add(inputTextScrollPaneSubPagesName);
-        this.add(this.bSubPagesName);
         this.add(inputTextScrollPaneSubPagesText);
-        this.add(this.bSubPagesText);
+        this.add(this.bConfirm);
         this.add(this.bPublish);
 
         // Set up the observers ----------------------------------------------
@@ -153,10 +146,7 @@ public final class WPGView1 extends JFrame implements WPGView {
         /*
          * Register this object as the observer for all GUI events
          */
-        this.bName.addActionListener(this);
-        this.bOrganization.addActionListener(this);
-        this.bSubPagesName.addActionListener(this);
-        this.bSubPagesText.addActionListener(this);
+        this.bConfirm.addActionListener(this);
         this.bPublish.addActionListener(this);
 
         // Set up the main application window --------------------------------
@@ -187,38 +177,24 @@ public final class WPGView1 extends JFrame implements WPGView {
          * to refresh the view
          */
         Object source = event.getSource();
-        if (source == this.bName) {
-            this.controller.processNameEvent();
-            this.currentState = State.SAW_NAME;
-        } else if (source == this.bOrganization) {
-            this.controller.processOrganizationEvent();
+        if (source == this.bConfirm) {
+            this.controller.processConfirmEvent();
+            this.currentState = State.SAW_CONFIRM;
+        } else if (source == this.bPublish) {
+            this.controller.processPublishEvent();
+            this.currentState = State.SAW_PUBLISH;
         }
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bEnter) {
-            this.controller.processEnterEvent();
-            this.currentState = State.SAW_ENTER;
-        } else if (source == this.bAdd) {
-            this.controller.processAddEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bSubtract) {
-            this.controller.processSubtractEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bMultiply) {
-            this.controller.processMultiplyEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bDivide) {
-            this.controller.processDivideEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bPower) {
-            this.controller.processPowerEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        } else if (source == this.bRoot) {
-            this.controller.processRootEvent();
-            this.currentState = State.SAW_OTHER_OP;
-        }
-        }
-/*
- * Set the cursor back to normal (because we changed it at the beginning of the
- * method body)
- */
-this.setCursor(Cursor.getDefaultCursor());}}
+
+        /*
+         * Set the cursor back to normal (because we changed it at the beginning
+         * of the method body)
+         */
+        this.setCursor(Cursor.getDefaultCursor());
+    }
+
+    @Override
+    public void registerObserver(WPGController controller) {
+        this.controller = controller;
+
+    }
+}
