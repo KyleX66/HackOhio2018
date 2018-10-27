@@ -7,7 +7,7 @@ import components.naturalnumber.NaturalNumber;
  *
  * @author Bruce W. Weide
  */
-public interface NNCalcView extends ActionListener {
+public interface WPGView extends ActionListener {
 
     /**
      * Register argument as observer/listener of this; this must be done first,
@@ -16,7 +16,7 @@ public interface NNCalcView extends ActionListener {
      * @param controller
      *            controller to register
      */
-    void registerObserver(NNCalcController controller);
+    void registerObserver(WPGController controller);
 
     /**
      * Updates top operand display based on NaturalNumber provided as argument.

@@ -1,6 +1,6 @@
 /**
  * Natural Number Calculator application.
- * 
+ *
  * This is a very simple "RPN" (Reverse Polish Notation) calculator. There are
  * two operands, both of which always have natural number values. Direct entry
  * of a number is always to the bottom operand in the display. The "Clear"
@@ -12,22 +12,22 @@
  * with the result of the operator and the top operand with 0; except that
  * division replaces the bottom operand with the quotient and the top operand
  * with the remainder.
- * 
+ *
  * @author Bruce W. Weide
- * 
+ *
  */
-public final class NaturalNumberCalculator {
+public final class WebPageGenerator {
 
     /**
      * Private constructor so this utility class cannot be instantiated.
      */
-    private NaturalNumberCalculator() {
+    private WebPageGenerator() {
     }
 
     /**
      * Main program that sets up main application window and starts user
      * interaction.
-     * 
+     *
      * @param args
      *            command-line arguments; not used
      */
@@ -37,9 +37,9 @@ public final class NaturalNumberCalculator {
          * controller needs to know about model and view, and view needs to know
          * about controller
          */
-        NNCalcModel model = new NNCalcModel1();
-        NNCalcView view = new NNCalcView1();
-        NNCalcController controller = new NNCalcController1(model, view);
+        WPGModel model = new WPGModel1();
+        WPGView view = new WPGView1();
+        WPGController controller = new WPGController1(model, view);
 
         view.registerObserver(controller);
     }

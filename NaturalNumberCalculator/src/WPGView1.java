@@ -17,13 +17,13 @@ import components.naturalnumber.NaturalNumber;
  * @author Jason Xu (xu.2460)
  */
 @SuppressWarnings("serial")
-public final class NNCalcView1 extends JFrame implements NNCalcView {
+public final class WPGView1 extends JFrame implements WPGView {
 
     /**
      * Controller object registered with this view to observe user-interaction
      * events.
      */
-    private NNCalcController controller;
+    private WPGController controller;
 
     /**
      * State of user interaction: last event "seen".
@@ -69,7 +69,7 @@ public final class NNCalcView1 extends JFrame implements NNCalcView {
     /**
      * Default constructor.
      */
-    public NNCalcView1() {
+    public WPGView1() {
         // Create the JFrame being extended
 
         /*
@@ -221,7 +221,7 @@ public final class NNCalcView1 extends JFrame implements NNCalcView {
     }
 
     @Override
-    public void registerObserver(NNCalcController controller) {
+    public void registerObserver(WPGController controller) {
         this.controller = controller;
     }
 

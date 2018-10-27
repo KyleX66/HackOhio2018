@@ -19,24 +19,11 @@ import components.naturalnumber.NaturalNumber;
  *   this = (0, 0)
  * </pre>
  */
-public interface NNCalcModel {
+public interface WPGModel {
 
-    /**
-     * Reports top operand.
-     *
-     * @return this.top
-     * @aliases reference returned by {@code top}
-     * @ensures top = this.top
-     */
-    NaturalNumber top();
+    /* Title */
+    String name();
+    String
 
-    /**
-     * Reports bottom operand.
-     *
-     * @return this.bottom
-     * @aliases reference returned by {@code bottom}
-     * @ensures bottom = this.bottom
-     */
-    NaturalNumber bottom();
 
 }

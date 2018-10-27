@@ -6,7 +6,7 @@ import components.naturalnumber.NaturalNumber2;
  *
  * @author Jason Xu (xu.2460)
  */
-public final class NNCalcModel1 implements NNCalcModel {
+public final class WPGModel1 implements WPGModel {
 
     /**
      * Model variables.
@@ -16,7 +16,7 @@ public final class NNCalcModel1 implements NNCalcModel {
     /**
      * Default constructor.
      */
-    public NNCalcModel1() {
+    public WPGModel1() {
         this.top = new NaturalNumber2();
         this.bottom = new NaturalNumber2();
     }

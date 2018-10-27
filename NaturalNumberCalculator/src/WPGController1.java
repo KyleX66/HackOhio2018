@@ -6,17 +6,17 @@ import components.naturalnumber.NaturalNumber2;
  *
  * @author Jason Xu (xu.2460)
  */
-public final class NNCalcController1 implements NNCalcController {
+public final class WPGController1 implements WPGController {
 
     /**
      * Model object.
      */
-    private final NNCalcModel model;
+    private final WPGModel model;
 
     /**
      * View object.
      */
-    private final NNCalcView view;
+    private final WPGView view;
 
     /**
      * Useful constants.
@@ -34,8 +34,8 @@ public final class NNCalcController1 implements NNCalcController {
      *            the view
      * @ensures [view has been updated to be consistent with model]
      */
-    private static void updateViewToMatchModel(NNCalcModel model,
-            NNCalcView view) {
+    private static void updateViewToMatchModel(WPGModel model,
+            WPGView view) {
         // get value from top and bottom
         NaturalNumber top = model.top();
         NaturalNumber bottom = model.bottom();
@@ -81,7 +81,7 @@ public final class NNCalcController1 implements NNCalcController {
      * @param view
      *            view to connect to
      */
-    public NNCalcController1(NNCalcModel model, NNCalcView view) {
+    public WPGController1(WPGModel model, WPGView view) {
         this.model = model;
         this.view = view;
         updateViewToMatchModel(model, view);

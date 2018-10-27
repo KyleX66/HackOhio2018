@@ -15,7 +15,7 @@
  *     this.view = view
  * </pre>
  */
-public interface NNCalcController {
+public interface WPGController {
 
     /**
      * Processes event to clear bottom operand.
