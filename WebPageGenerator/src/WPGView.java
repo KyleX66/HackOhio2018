@@ -16,4 +16,11 @@ public interface WPGView extends ActionListener {
      */
     void registerObserver(WPGController controller);
 
+    void getNameString(String name);
+
+    void getOrganizationString(String organization);
+
+    void getSubPagesNameString(String SubPagesName);
+
+    void getSubPagesTextString(String SubPagesText);
 }

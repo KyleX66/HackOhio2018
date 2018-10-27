@@ -17,7 +17,8 @@
  */
 public interface WPGController {
 
-    void processConfirmEvent();
+    void processConfirmEvent(String name, String organization,
+            String subPagesName, String subPagesText);
 
     void processPublishEvent();
 

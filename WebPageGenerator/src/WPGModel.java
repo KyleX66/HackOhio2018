@@ -36,8 +36,4 @@ public interface WPGModel {
 
     void addSubPages(Pair<String, String> subPairs);
 
-    //String subPagesTitle();
-
-    //String subPagesText();
-    123123
 }

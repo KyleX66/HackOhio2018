@@ -129,7 +129,7 @@ public final class WPGView1 extends JFrame implements WPGView {
         /*
          * Organize main window
          */
-        this.setLayout(new GridLayout(6, 1));
+        this.setLayout(new GridLayout(3, 2));
         /*
          * Add scroll panes and button panel to main window, from left to right
          * and top to bottom
@@ -161,6 +161,11 @@ public final class WPGView1 extends JFrame implements WPGView {
     }
 
     @Override
+    public void getNameString(String name) {
+        this.name.setText(name);
+    }
+
+    @Override
     public void actionPerformed(ActionEvent event) {
         /*
          * Set cursor to indicate computation on-going; this matters only if
@@ -178,7 +183,8 @@ public final class WPGView1 extends JFrame implements WPGView {
          */
         Object source = event.getSource();
         if (source == this.bConfirm) {
-            this.controller.processConfirmEvent();
+            this.controller.processConfirmEvent(String name, String organization,
+                    String subPagesName, String subPagesText);
             this.currentState = State.SAW_CONFIRM;
         } else if (source == this.bPublish) {
             this.controller.processPublishEvent();
