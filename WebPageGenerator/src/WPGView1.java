@@ -28,7 +28,7 @@ public final class WPGView1 extends JFrame implements WPGView {
         /**
          * Last event was clear, enter, another operator, or digit entry, resp.
          */
-        SAW_CLEAR, SAW_ENTER, SAW_OTHER_OP, SAW_DIGIT;
+        SAW_NAME, SAW_ORGANIZATION, SAW_SUBPAGESNAME, SAW_SUBPAGESTEXT;
     }
 
     /**
@@ -76,7 +76,7 @@ public final class WPGView1 extends JFrame implements WPGView {
          * currentState is not a GUI widget per se, but is needed to process
          * digit button events appropriately
          */
-        this.currentState = State.SAW_CLEAR;
+        this.currentState = State.SAW_NAME;
         /*
          * Create widgets
          */
