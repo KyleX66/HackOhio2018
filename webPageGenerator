@@ -33,8 +33,7 @@ public static void webPageGenerator(String name, String organizaiton, Sequence<P
             output.println( "<li class=\"sidebar\">"+ namemain +"</li>");
             for(int i = 1;i < subPages.length();i++){
                  Pair<String,String> pair = subPages.entry(i);
-                 String k = i.toString();
-                 output.println("<li class=\"sidebar\" id = \"out" + k +"\"><a href=\""+ pair.key() +".html\" onclick=disp_alert()>" + pair.key() + "</a></li>");
+                 output.println("<li class=\"sidebar\" id = \"out" + i +"\"><a href=\""+ pair.key() +".html\" onclick=disp_alert()>" + pair.key() + "</a></li>");
                  subPagesGenerator(pair);
             }
             output.println("</ul>");
@@ -43,6 +42,17 @@ public static void webPageGenerator(String name, String organizaiton, Sequence<P
             output.println("<p class = \"bio\">");
             output.println(getmain);
             output.println("</p>");
+            output.println("</div>");
+            output.println("<div id = footer>");
+            output.println("<div class = \"footer\" id=\"localtime\"></div>");
+            output.println(" <script type=\"text/javascript\">");
+            output.println(" function showLocale(objD)\n{");
+            output.println(" var str,colorhead,colorfoot;\n   var yy = objD.getYear();\n if(yy<1900) yy = yy+1900;\n     var MM = objD.getMonth()+1;\n  if(MM<10) MM = '0' + MM;\n    var dd = objD.getDate();\n    if(dd<10) dd = '0' + dd;\n     var hh = objD.getHours();\n  if(hh<10) hh = '0' + hh;\n  var mm = objD.getMinutes();\n if(mm<10) mm = '0' + mm;\n var ss = objD.getSeconds();\n   if(ss<10) ss = '0' + ss;\n colorhead = \"<span>\"\n colorfoot="</span>"\n   str = colorhead + yy + \"-\" + MM + \"-\" + dd + \" \" + hh + \":\" + mm + \":\" + ss + \" \" + colorfoot;\n  return(str);\n }");
+            output.println("function tick()\n {");
+            output.println("  var today;\n today = new Date();\n  document.getElementById(\"localtime\").innerHTML = showLocale(today);\n window.setTimeout(\"tick()\", 1000);\n }");
+            output.println("tick();");
+            output.println("</script>");
+            output.println("Copyright" + name);
             output.println("</div>");
             output.println("</body>\n</html>");
         }
