@@ -13,7 +13,7 @@
  * division replaces the bottom operand with the quotient and the top operand
  * with the remainder.
  * 
- * @author Zongming Tian
+ * @author Zongming Tian Zei ji ba shuai
  * WTF!!!
  * 
  */
