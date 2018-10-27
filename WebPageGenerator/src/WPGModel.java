@@ -1,5 +1,6 @@
-import components.map.Map.Pair;
+
 import components.sequence.Sequence;
+import javafx.util.Pair;
 
 /**
  * Model interface.

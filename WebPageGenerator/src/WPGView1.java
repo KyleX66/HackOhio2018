@@ -161,11 +161,6 @@ public final class WPGView1 extends JFrame implements WPGView {
     }
 
     @Override
-    public void getNameString(String name) {
-        this.name.setText(name);
-    }
-
-    @Override
     public void actionPerformed(ActionEvent event) {
         /*
          * Set cursor to indicate computation on-going; this matters only if
@@ -183,8 +178,9 @@ public final class WPGView1 extends JFrame implements WPGView {
          */
         Object source = event.getSource();
         if (source == this.bConfirm) {
-            this.controller.processConfirmEvent(String name, String organization,
-                    String subPagesName, String subPagesText);
+            this.controller.processConfirmEvent(this.name.getText(),
+                    this.organization.getText(), this.subPagesName.getText(),
+                    this.subPagesText.getText());
             this.currentState = State.SAW_CONFIRM;
         } else if (source == this.bPublish) {
             this.controller.processPublishEvent();
