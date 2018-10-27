@@ -39,6 +39,11 @@ public static void webPageGenerator(String name, String organizaiton, Sequence<P
             output.println("</ul>");
             output.println("</div>");
             output.println("<div id=\"maincol\">");
+            output.println("<p style=\"float:left\">\n </p>");
+            output.println("<p>\n  <form action=\"http://www.google.com/search\" method=\"get\">");
+            output.println("<input type=\"text\" name=\"q\" size=\"17\" maxlength=\"255\" value=\"\" />");
+            output.println("<input type=\"submit\" name=\"btnG\" value=\"Google\" />");
+            output.println("</form>"\n "</p>");
             output.println("<p class = \"bio\">");
             output.println(getmain);
             output.println("</p>");
