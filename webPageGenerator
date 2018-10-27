@@ -1,3 +1,18 @@
 public static void webPageGenerator(String name, String organizaiton, Sequence<Pair<String, String>> subPages) {
-            
+            SimpleWriter output = new SimpleWriter1L(name + ".html");
+            output.println("<!DOCTYPE html>");
+            output.println("<html lang="en">");
+            output.println("<head>");
+            output.println("<meta charset="UTF-8">");
+            output.println("<title>" + name + "</title>");
+            output.println("<style>");
+            output.println("#header {\n padding: 1ex 0ex 1ex 3ex;\n  background: #3B6EBF;\n color: #ffffff;\n }");
+            output.println("#sidebar {\n line-height:80px;\n background-color:#eeeeee;\n height:1300px;\n width:170px;\n float:left;\n padding:5px;\n font-family: "sans serif";\n }");
+            output.println("#footer {\n  background-color:yellow;\n color:purple;\n clear:both;\n text-align:center;\n padding:5px;\n }");
+            output.println("#maincol {\n  float: right;\n width: 75%;\n padding: 30px 7% 10px 3%;\n border-left: dotted 1px #000099;\n }");
+            output.println(" img.bio {\n  float: right;\n  margin: 2ex;/n }");
+            output.println("</style>");
+            output.println("<script>");
+            output.println("function myFunction(){\n  document.getElementById(""greetings1"").innerHTML=""Thanks for visiting"";\n}");
+            output.println("function clickme() {\n    var obj = document.getElementById(""bio"");\n  var x = obj.offsetLeft;\n var y = obj.offsetTop;\n x += 10;");
         }
