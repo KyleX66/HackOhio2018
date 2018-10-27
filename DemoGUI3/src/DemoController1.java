@@ -81,6 +81,7 @@ public final class DemoController1 implements DemoController {
         /*
          * Update model in response to this event
          */
+        this.model.setInput(input);
         this.model.setOutput(input);
         /*
          * Update view to reflect changes in model
